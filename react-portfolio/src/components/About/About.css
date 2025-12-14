@@ -1,0 +1,38 @@
+.about {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-container {
+  text-align: center;
+}
+
+.about-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.about-text {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #4f46e5;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #4338ca;
+}
