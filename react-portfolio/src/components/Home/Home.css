@@ -1,45 +1,133 @@
-.home-container {
+.home-container { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 80vh; 
+  padding: 20px; 
+  text-align: center; 
+  font-family: Arial, sans-serif; 
+} 
+
+.hero h1 { 
+  margin-bottom: 10px; 
+  font-size: 3rem; 
+} 
+
+.hero h1 span { 
+  color: #007bff; 
+} 
+
+.hero h2 { 
+  margin-bottom: 20px; 
+  font-size: 1.5rem; 
+  color: #555; 
+} 
+
+.hero p { 
+  margin: 0 auto 30px; 
+  max-width: 500px; 
+  color: #666; 
+} 
+
+.contact-btn { 
+  display: inline-block; 
+  padding: 12px 24px; 
+  font-size: 1.1rem; color: #fff; 
+  background: #007bff; 
+  text-decoration: none; 
+  border-radius: 6px; 
+  transition: background 0.3s ease; 
+} 
+
+.contact-btn:hover { 
+  background: #0056b3; 
+}
+
+.social-links {
+  position: fixed;
+  top: 50%;
+  left: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-link {
+  display: flex;
   align-items: center;
-  height: 80vh;
-  padding: 20px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero h1 span {
-  color: #007bff;
-}
-
-.hero h2 {
-  font-size: 1.5rem;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  max-width: 500px;
-  margin: 0 auto 30px;
-  color: #666;
-}
-
-.contact-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #007bff;
-  color: white;
+  background-color: #5a5f6e;
+  color: #fff;
+  width: 50px; 
+  height: 50px;
+  margin: 6px 0;
+  border-radius: 0 25px 25px 0;
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  transition: 0.3s;
+  font-size: 18px;
+  overflow: hidden;
+  transition: width 0.3s ease, background 0.3s ease;
 }
 
-.contact-btn:hover {
-  background: #0056b3;
+.social-link:hover {
+  width: 180px;
+  background-color: #007bff; 
+}
+
+.social-link svg {
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+.social-label {
+  margin-left: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-link:hover .social-label {
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 15px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .contact-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .social-links {
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+  }
+
+  .social-link {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 6px;
+  }
+
+  .social-link:hover {
+    width: 50px;
+  }
+
+  .social-label {
+    display: none;
+  }
 }

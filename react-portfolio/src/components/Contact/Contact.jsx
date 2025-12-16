@@ -8,16 +8,12 @@ const Contact = () => {
     message: ""
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = ({ target: { name, value } }) =>
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-
-    // reset form
     setFormData({ name: "", email: "", message: "" });
     alert("Message sent!");
   };
@@ -32,29 +28,29 @@ const Contact = () => {
         <input
           type="text"
           name="name"
-          required
           value={formData.name}
           onChange={handleChange}
-          placeholder="Enter your Name"
+          placeholder="Enter your name"
+          required
         />
 
-        <label>Email ID</label>
+        <label>Email</label>
         <input
           type="email"
           name="email"
-          required
           value={formData.email}
           onChange={handleChange}
-          placeholder="Enter your Email Address"
+          placeholder="Enter your email"
+          required
         />
 
         <label>Message</label>
         <textarea
           name="message"
-          required
           value={formData.message}
           onChange={handleChange}
-          placeholder="Write your Message...."
+          placeholder="Write your message..."
+          required
         />
 
         <button type="submit">Send Message</button>
