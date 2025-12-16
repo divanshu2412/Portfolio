@@ -1,13 +1,13 @@
 .education {
-  padding: 60px 20px;
   max-width: 900px;
   margin: auto;
+  padding: 60px 20px;
 }
 
 .education-title {
+  margin-bottom: 40px;
   font-size: 2.2rem;
   text-align: center;
-  margin-bottom: 40px;
 }
 
 .education-list {
@@ -18,8 +18,8 @@
 
 .education-card {
   padding: 20px;
+  background: #f9fafb;
   border-left: 4px solid #4f46e5;
-  background-color: #f9fafb;
   border-radius: 8px;
 }
 
@@ -35,8 +35,7 @@
 
 .duration {
   display: block;
+  margin: 10px 0;
   font-size: 0.9rem;
   color: #6b7280;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
