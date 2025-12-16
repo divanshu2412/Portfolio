@@ -1,7 +1,7 @@
 .about {
-  padding: 60px 20px;
   max-width: 900px;
   margin: auto;
+  padding: 60px 20px;
 }
 
 .about-container {
@@ -9,30 +9,30 @@
 }
 
 .about-title {
-  font-size: 2rem;
   margin-bottom: 20px;
-  color: black;
+  font-size: 2rem;
+  color: #000;
 }
 
 .about-text {
-  font-size: 1rem;
-  color: #374151;
-  line-height: 1.8;
   margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #374151;
 }
 
 .download-btn {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 25px;
-  background-color: #4f46e5;
+  background: #4f46e5;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
   font-weight: 500;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .download-btn:hover {
-  background-color: #4338ca;
+  background: #4338ca;
 }
