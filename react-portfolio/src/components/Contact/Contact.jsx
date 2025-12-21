@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
+import PersonIcon from '@mui/icons-material/Person';
+import EmailIcon from '@mui/icons-material/Email';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +27,8 @@ const Contact = () => {
 
       <form className="contact-form" onSubmit={handleSubmit}>
         <label>Name</label>
+        <div className="input-wrapper-name">
+        <PersonIcon className="input-icon-name" />  
         <input
           type="text"
           name="name"
@@ -33,23 +37,27 @@ const Contact = () => {
           placeholder="Enter your name"
           required
         />
+        </div>
 
-        <label>Email</label>
+        <label>Email ID</label>
+        <div className="input-wrapper-email">
+        <EmailIcon className="input-icon-email" />
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="Enter your email"
+          placeholder="Enter your email address"
           required
         />
+        </div>
 
         <label>Message</label>
         <textarea
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Write your message..."
+          placeholder="Write your message...."
           required
         />
 
