@@ -57,3 +57,24 @@
 .contact-form button:hover {
   background: #0056b3;
 }
+
+.input-wrapper-email, .input-wrapper-name {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper-email input, .input-wrapper-name input {
+  padding: 10px 10px 10px 35px; 
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.input-icon-email, .input-icon-name {
+  position: absolute;
+  left: 10px;
+}
+
+

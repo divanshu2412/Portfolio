@@ -32,7 +32,7 @@ const Skills = () => (
   <div className="skills-container">
     <h1>My Skills</h1>
 
-    <h2>Front-End Development</h2>
+    <h2>Front - End Development</h2>
     <div className="skills-grid">
       {frontendSkills.map(skill => (
         <SkillCard key={skill.name} {...skill} />
