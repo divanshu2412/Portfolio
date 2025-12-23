@@ -1,8 +1,8 @@
 .footer {
-  background-color: #111827;
-  color: #f9fafb;
-  padding: 40px 20px;
   margin-top: 60px;
+  padding: 40px 20px;
+  background: #111827;
+  color: #f9fafb;
 }
 
 .footer-content {
@@ -12,14 +12,14 @@
 }
 
 .footer-name {
-  font-size: 1.5rem;
   margin-bottom: 10px;
+  font-size: 1.5rem;
 }
 
 .footer-text {
+  margin-bottom: 20px;
   font-size: 0.95rem;
   color: #d1d5db;
-  margin-bottom: 20px;
 }
 
 .footer-links {
@@ -30,9 +30,9 @@
 }
 
 .footer-links a {
+  font-weight: 500;
   color: #93c5fd;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .footer-links a:hover {

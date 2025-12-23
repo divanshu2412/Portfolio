@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
+import PersonIcon from '@mui/icons-material/Person';
+import EmailIcon from '@mui/icons-material/Email';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,16 +10,12 @@ const Contact = () => {
     message: ""
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = ({ target: { name, value } }) =>
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-
-    // reset form
     setFormData({ name: "", email: "", message: "" });
     alert("Message sent!");
   };
@@ -29,32 +27,38 @@ const Contact = () => {
 
       <form className="contact-form" onSubmit={handleSubmit}>
         <label>Name</label>
+        <div className="input-wrapper-name">
+        <PersonIcon className="input-icon-name" />  
         <input
           type="text"
           name="name"
-          required
           value={formData.name}
           onChange={handleChange}
-          placeholder="Enter your Name"
+          placeholder="Enter your name"
+          required
         />
+        </div>
 
         <label>Email ID</label>
+        <div className="input-wrapper-email">
+        <EmailIcon className="input-icon-email" />
         <input
           type="email"
           name="email"
-          required
           value={formData.email}
           onChange={handleChange}
-          placeholder="Enter your Email Address"
+          placeholder="Enter your email address"
+          required
         />
+        </div>
 
         <label>Message</label>
         <textarea
           name="message"
-          required
           value={formData.message}
           onChange={handleChange}
-          placeholder="Write your Message...."
+          placeholder="Write your message...."
+          required
         />
 
         <button type="submit">Send Message</button>
