@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./Contact.css";
-import PersonIcon from '@mui/icons-material/Person';
-import EmailIcon from '@mui/icons-material/Email';
+import PersonIcon from "@mui/icons-material/Person";
+import EmailIcon from "@mui/icons-material/Email";
+import axios from "axios";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const handleChange = ({ target: { name, value } }) =>
@@ -16,7 +17,44 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", message: "" });
+  try {
+    const res = axios.post(
+      "http://localhost:8000/api/v1/customer-query/create",
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((res) => {
+      console.log(res);
+    }).catch((err) => {
+      console.log(err);
+    });
+
+    console.log("Response:", res.data);
+
+    alert("Message sent successfully! ✅");
+
+    // reset form after success
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error(
+      "Error submitting form:",
+      error.response?.data || error.message
+    );
+
+    alert("Failed to send message ❌. Please try again.");
+  }
+    // setFormData({ name: "", email: "", message: "" });
     alert("Message sent!");
   };
 
@@ -28,28 +66,28 @@ const Contact = () => {
       <form className="contact-form" onSubmit={handleSubmit}>
         <label>Name</label>
         <div className="input-wrapper-name">
-        <PersonIcon className="input-icon-name" />  
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Enter your name"
-          required
-        />
+          <PersonIcon className="input-icon-name" />
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Enter your name"
+            required
+          />
         </div>
 
         <label>Email ID</label>
         <div className="input-wrapper-email">
-        <EmailIcon className="input-icon-email" />
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Enter your email address"
-          required
-        />
+          <EmailIcon className="input-icon-email" />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Enter your email address"
+            required
+          />
         </div>
 
         <label>Message</label>

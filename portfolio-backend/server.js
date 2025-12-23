@@ -8,10 +8,7 @@ const app = require('./app');
 mongoose.set('strictQuery', true);
 
 mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.DATABASE)
   // eslint-disable-next-line no-console
   .then(() => console.log('DB Connection Successful'));
 

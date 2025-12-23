@@ -4,7 +4,12 @@ const CustomerQuery = require("../Models/customerQuery");
 // 1) Create new Customer records
 exports.create = async (req, res) => {
   try {
-    const customerQuery = await CustomerQuery.create(req.body);
+    console.log(req.body);
+    const customerQuery = await CustomerQuery.create({
+      name: req.body.name,
+      email: req.body.email,
+      message: req.body.message,
+    });
     res.status(201).json({
       status: "Success",
       data: customerQuery,
