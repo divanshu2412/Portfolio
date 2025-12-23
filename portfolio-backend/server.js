@@ -8,12 +8,11 @@ const app = require('./app');
 mongoose.set('strictQuery', true);
 
 mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.DATABASE)
+
   // eslint-disable-next-line no-console
-  .then(() => console.log('DB Connection Successful'));
+  .then(() => console.log('DB Connection Successful'))
+  .catch(err => console.error('DB Connection Failed:', err));
 
 const port = process.env.PORT || 3000;
 
