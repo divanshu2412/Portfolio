@@ -36,3 +36,49 @@ exports.getAll = async (req, res) => {
     });
   }
 };
+
+// 3) Delete Customer
+exports.delete = async (req, res) => {
+  try {
+    const customerQuery = await CustomerQuery.findByIdAndDelete(req.params.id);
+    if(!customerQuery) {
+      return res.status(404).json({
+        status: "Fail",
+        message: "Customer not found",
+      });
+    }
+    res.status(204).json({
+      status: "Success",
+      data: null,
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "Fail",
+      message: err.message,
+    });
+  }
+};
+
+// 4) Update Customer
+exports.update = async (req, res) => {
+  try {
+    const customerQuery = await CustomerQuery.findByIdAndUpdate(
+      req.params.id,
+      {
+        name: req.body.name,
+        email: req.body.email,
+        message: req.body.message,
+      },
+      { new: true }
+    );
+    res.status(200).json({
+      status: "Success",
+      data: customerQuery,
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "Fail",
+      message: err.message,
+    });
+  }
+};
